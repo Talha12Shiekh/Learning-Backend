@@ -1,0 +1,16 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 06BB-F0A4
+
+ Directory of C:\Users\786\Documents\LEARNING-NODE
+
+05/13/2025  02:59 AM    <DIR>          .
+05/13/2025  02:59 AM    <DIR>          ..
+05/13/2025  02:27 AM                12 .gitignore
+05/13/2025  02:59 AM                 0 demo.txt
+05/13/2025  03:01 AM             1,084 index.js
+05/12/2025  04:01 AM               127 lib.js
+05/13/2025  02:29 AM    <DIR>          node_modules
+05/13/2025  02:29 AM            40,642 package-lock.json
+05/13/2025  02:29 AM               521 package.json
+               6 File(s)         42,386 bytes
+               3 Dir(s)  25,958,666,240 bytes free
