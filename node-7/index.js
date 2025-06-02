@@ -9,6 +9,7 @@ app.use(express.json());
 app.use("/products", productsRouter.exportrouter);
 app.use("/quotes", quotesRouter.exportrouter);
 
+// mongodb://localhost:27017/
 // db connectors
 main().catch((err) => console.log(err));
 
