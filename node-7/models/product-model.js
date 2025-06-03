@@ -11,10 +11,10 @@ const productSchema = new Schema({
     type: Number,
     min: [0, "Wrong ratings"],
     max: [5, "Exceeded ratings"],
+    default:0
   },
   brand: String,
   thumbnail: { type: String, required: true },
-  images: [String],
 });
 
 exports.Product = mongoose.model("Product", productSchema);
