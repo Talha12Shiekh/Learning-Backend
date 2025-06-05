@@ -18,7 +18,7 @@ const AddProduct = () => {
 
   async function addProduct(product) {
     await axios.post(
-      "http://localhost:8080/products",
+      "/products",
       product
     );
   }

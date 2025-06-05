@@ -7,6 +7,7 @@ const Product = ({
   price,
   discountPercentage,
   rating,
+  handleDeleteProduct
 }) => {
   return (
     <>
@@ -18,8 +19,8 @@ const Product = ({
                 <div className="first">
                   <div className="d-flex justify-content-between align-items-center">
                     <span className="discount">-{discountPercentage}%</span>
-                    <span className="wishlist">
-                      <i className="fa fa-heart-o" />
+                    <span className="wishlist" >
+                      <i className="fa fa-trash" onClick={() => handleDeleteProduct(_id)} />
                     </span>
                   </div>
                 </div>
