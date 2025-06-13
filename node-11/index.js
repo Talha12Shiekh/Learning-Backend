@@ -2,7 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const usersRouter = require("./routes/user-route");
 const {
-  createUsers
+  signUp,
+  login
 } = require("./controller/auth-controller");
 const app = express();
 const cors = require("cors");
@@ -33,7 +34,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)));
 app.use("/users", auth, usersRouter.exportrouter);
-app.post("/auth/signup", createUsers);
+app.post("/auth/signup", signUp);
+app.post("/auth/login", login);
 app.use("/*splat", (req, res) => {
   res.sendFile(path.resolve(__dirname, process.env.PUBLIC_DIR, "index.html"), (er) => {
     console.log(er);
