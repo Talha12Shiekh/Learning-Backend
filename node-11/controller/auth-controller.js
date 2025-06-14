@@ -31,9 +31,8 @@ exports.login = async (req, res) => {
         if (isAuthenticated) {
             let token = jwt.sign({ email: req.body.email }, privatekey, { algorithm: 'RS256' });
             doc.token = token;
-            doc.save(() => {
-                res.json({ token });
-            });
+            doc.save();
+            res.json({ token });
         } else {
             res.sendStatus(401);
         }
