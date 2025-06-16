@@ -7,7 +7,7 @@ const ProductList = () => {
   const [total, setTotal] = useState(0);
 
   async function getProducts() {
-    const { data } = await axios.get("http://localhost:8080/products");
+    const { data } = await axios.get("/products");
     setProducts(data);
     setTotal(data.length);
   }
@@ -15,7 +15,7 @@ const ProductList = () => {
   async function handleDeleteProduct(dltid) {
     try {
       if (confirm("Are you sure you want to delete !")) {
-        await axios.delete(`http://localhost:8080/products/${dltid}`);
+        await axios.delete(`/products/${dltid}`);
         await getProducts();
       }
     } catch (error) {
@@ -30,7 +30,7 @@ const ProductList = () => {
   async function handleSort(e) {
     const sortstr = e.target.value.split(".");
     const { data } = await axios.get(
-      `http://localhost:8080/products/sort/?sortkey=${sortstr[0]}&order=${sortstr[1]}`
+      `/products/sort/?sortkey=${sortstr[0]}&order=${sortstr[1]}`
     );
     console.log(data);
     setProducts(data);
@@ -38,7 +38,7 @@ const ProductList = () => {
 
   async function handlePagination(pgnum) {
     const { data } = await axios.get(
-      `http://localhost:8080/products/sort/?page=${pgnum}`
+      `/products/sort/?page=${pgnum}`
     );
     setProducts(data);
   }
