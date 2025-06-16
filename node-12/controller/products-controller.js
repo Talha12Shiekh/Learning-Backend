@@ -7,7 +7,6 @@ const path = require("path");
 exports.getAllProductsSSR = async (req, res) => {
   const products = await Product.find();
   ejs.renderFile(path.resolve(__dirname, "../pages/index.ejs"), { products: products }, function (err, str) {
-    console.log(str);
     res.status(201).send(str);
   });
 };

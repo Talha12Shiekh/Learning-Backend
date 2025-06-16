@@ -1,4 +1,3 @@
-require("./events");
 require("dotenv").config();
 const express = require("express");
 const productsRouter = require("./routes/product-route");
@@ -27,8 +26,16 @@ app.use("/*splat", (req, res) => {
   });
 });
 
-io.on('connection', () => {
+io.on('connection', (socket) => {
+  console.log(socket.id);
 
+  socket.on("msg", (data) => {
+    console.log({ data });
+  });
+
+  setTimeout(() => {
+    socket.emit("serverMsg", { server: "hi" })
+  }, 4000);
 });
 
 // mongodb://localhost:27017/
