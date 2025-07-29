@@ -1,0 +1,31 @@
+{
+  "name": "learning-passport.js",
+  "version": "1.0.0",
+  "description": "Learning passport js for building authentication systems easily in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Talha12Shiekh/Learning-Backend.git"
+  },
+  "keywords": [
+    "passport.js"
+  ],
+  "author": "Talha shiekh <tk.shiekh4567@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Talha12Shiekh/Learning-Backend/issues"
+  },
+  "homepage": "https://github.com/Talha12Shiekh/Learning-Backend#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongoose": "^8.16.5",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}
