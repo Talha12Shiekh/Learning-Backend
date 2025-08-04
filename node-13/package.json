@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "local": "nodemon server.js",
+    "goggle": "nodemon goggle.js"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,15 @@
   "homepage": "https://github.com/Talha12Shiekh/Learning-Backend#readme",
   "dependencies": {
     "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "express-session": "^1.18.2",
     "mongoose": "^8.16.5",
+    "mongoose-findorcreate": "^4.0.0",
     "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0"
   }
 }
