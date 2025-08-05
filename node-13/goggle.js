@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 const { connectToMongoose } = require("./mongoose")
 const session = require("express-session");
-const { connectGoggleAuth } = require('./goggle-passport');
+const { connectGoggleAuth, isAuhtenticated } = require('./goggle-passport');
 const {goggleAuthRouter} = require("./goggleAuthRouter");
 const passport = require("passport");
 const cors = require('cors')
@@ -25,7 +25,13 @@ app.use(cors());
 connectToMongoose();
 connectGoggleAuth();
 
-app.use("/auth/google",goggleAuthRouter)
+app.use("/auth/google",goggleAuthRouter);
+app.get("/dashboard",isAuhtenticated,(req,res) => {
+    res.json(req.user);
+});
+app.get("/",isAuhtenticated,(req,res) => {
+    res.send("Home page");
+})
 // http://localhost:3000/auth/google/callback
 
 app.listen(port, () => {

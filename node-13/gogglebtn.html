@@ -27,16 +27,8 @@
     </style>
   </head>
   <body>
-    <button>Sign in with goggle</button>
+    <form action="http://localhost:3000/auth/google" method="GET">
+      <button type="submit">Sign in with google</button>
+    </form>
   </body>
-  <script>
-    let button = document.querySelector("button");
-
-    button.addEventListener("click", async () => {
-      const response = await fetch("http://localhost:3000/auth/google", {
-        method: "GET",
-      });
-      console.log(response);
-    });
-  </script>
 </html>

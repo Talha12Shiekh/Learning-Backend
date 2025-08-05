@@ -13,6 +13,13 @@ router.get("/success", (req, res) => {
 
 router.get("/failure", (req, res) => {
     res.send("Goggle failure");
+});
+
+router.get("/logout",(req,res,next) => {
+     req.logout(function (err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
 })
 
 router.get('/callback',

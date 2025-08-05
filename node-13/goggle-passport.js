@@ -59,9 +59,6 @@ exports.connectGoggleAuth = () => {
     ));
 
     passport.serializeUser(function (user, done) {
-        console.log("Hello world");
-        console.log(user);
-        console.log("Bello world");
         done(null, user._id);
     });
 
@@ -73,4 +70,11 @@ exports.connectGoggleAuth = () => {
             done(error);
         }
     });
+}
+
+
+exports.isAuhtenticated = (req,res,next) => {
+    if(req.user) return next();
+
+    res.redirect("/auth/google");
 }
